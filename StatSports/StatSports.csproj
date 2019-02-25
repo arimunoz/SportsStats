@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="bootstrap" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\style\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\style\.DS_Store" />
+    <Content Remove="wwwroot\style\bootstrap\.DS_Store" />
+    <Content Remove="wwwroot\style\bootstrap\css\bootstrap.css" />
+    <Content Remove="wwwroot\style\bootstrap\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\style\bootstrap\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\style\bootstrap\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.bundle.js" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.js" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\style\bootstrap\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\style\jquery\jquery.js" />
+    <Content Remove="wwwroot\style\jquery\jquery.min.js" />
+    <Content Remove="wwwroot\style\jquery\jquery.min.map" />
+    <Content Remove="wwwroot\style\jquery\jquery.slim.js" />
+    <Content Remove="wwwroot\style\jquery\jquery.slim.min.js" />
+    <Content Remove="wwwroot\style\jquery\jquery.slim.min.map" />
+    <Content Remove="wwwroot\style\bootstrap\css\business-frontpage.css" />
+    <Content Remove="wwwroot\images\dirtyball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\style\.DS_Store" />
+    <None Include="wwwroot\style\bootstrap\.DS_Store" />
+    <None Include="wwwroot\style\bootstrap\css\bootstrap.css" />
+    <None Include="wwwroot\style\bootstrap\css\bootstrap.css.map" />
+    <None Include="wwwroot\style\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\style\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.js.map" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\style\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\style\jquery\jquery.js" />
+    <None Include="wwwroot\style\jquery\jquery.min.js" />
+    <None Include="wwwroot\style\jquery\jquery.min.map" />
+    <None Include="wwwroot\style\jquery\jquery.slim.js" />
+    <None Include="wwwroot\style\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\style\jquery\jquery.slim.min.map" />
+    <None Include="wwwroot\style\bootstrap\css\business-frontpage.css" />
+    <None Include="wwwroot\images\dirtyball.jpg" />
+  </ItemGroup>
+</Project>
