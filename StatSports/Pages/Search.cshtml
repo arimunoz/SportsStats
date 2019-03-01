@@ -5,6 +5,17 @@
     <title>Search Page</title>
 </head>
 <body>
+    <div class="navbar-nav" style="margin-top:5px;">
+        @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+    {
+        <ul class="nav navbar-nav">
+            <li>@Html.TextBox("id", ViewBag.CurrentFilter as string)</li>
+            <li><input type="submit" value="Search" /></li>
+        </ul>
+}
+    </div>
+
+    <p></p>
    </body>
 </html>
 

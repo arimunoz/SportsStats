@@ -1,0 +1,126 @@
+﻿@* WebCrawler Page *@
+@page
+@using System.Text
+@using HtmlAgilityPack
+
+
+
+@{
+    <!--  -->
+    Layout = "_Layout";
+
+    <!--String Array that holds the URLs-->
+    string[] MLB_Batting_URLs =
+    {
+@"http://www.espn.com/mlb/stats/batting/_/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/41/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/81/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/121/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/161/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/201/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/241/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/281/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/321/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/361/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/401/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/441/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/481/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/521/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/561/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/601/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/641/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/681/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/721/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/761/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/801/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/841/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/881/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/921/qualified/false",
+@"http://www.espn.com/mlb/stats/batting/_/count/961/qualified/false"
+};
+
+    string outPut = null;
+    int i = 1;
+    int u = 0;
+    HtmlWeb web = new HtmlWeb();
+    var ESPNparse = ("//table[@class='tablehead']/tr[position() > 1]/td");
+
+
+}
+
+<div class="WC_sidebar">
+    <button class="collapsible">MLB</button>
+    <div class="content">
+        <a href="#batting">Batting</a>
+        <a href="#pitching">Pitching</a>
+        <a href="#fielding">Fielding</a>
+    </div>
+</div>
+
+
+<div class="main">
+
+
+    <h1>Web Crawler</h1>
+
+
+
+    <table class="stat_tbl">
+        <tr>
+            <th>RANK</th>
+            <th>PLAYER</th>
+            <th>TEAM</th>
+            <th>AB</th>
+            <th>R</th>
+            <th>H</th>
+            <th>2B</th>
+            <th>3B</th>
+            <th>HR</th>
+            <th>RBI</th>
+            <th>SB</th>
+            <th>CS</th>
+            <th>BB</th>
+            <th>SO</th>
+            <th>AVG</th>
+            <th>OBP</th>
+            <th>SLG</th>
+            <th>OPS</th>
+            <th>WAR</th>
+        </tr>
+
+        @foreach (var url in MLB_Batting_URLs)
+        {
+            @foreach (var cell in web.Load(url).DocumentNode.SelectNodes(ESPNparse))
+            {
+                @if (i == 0)
+                {
+                    @:<tr>
+                    }
+
+                outPut = cell.InnerText;
+
+                @if (outPut == "&nbsp;")
+                {
+                    outPut = "___";
+                }
+                <td>@outPut</td>
+
+                @if (i == 19)
+                {
+                @:</tr>
+                i = 0;
+            }
+
+                i++;
+                u++;
+            }
+
+        }
+
+
+
+
+
+    </table>
+
+</div>

@@ -1,0 +1,54 @@
+﻿.WC_sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+    .WC_sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+    }
+
+        .WC_sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .WC_sidebar {
+        padding-top: 15px;
+    }
+
+        .WC_sidebar a {
+            font-size: 18px;
+        }
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+    .active, .collapsible:hover {
+        background-color: #555;
+    }

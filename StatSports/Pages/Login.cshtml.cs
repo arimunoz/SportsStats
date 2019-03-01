@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace bootstapTest.Pages
 {
-    public class AboutModel : PageModel
+    public class LoginModel : PageModel
     {
         public string Message { get; set; }
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "Please enter your username and password.";
         }
     }
 }

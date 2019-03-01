@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="bootstrap" Version="4.3.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.9.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +36,8 @@
     <Content Remove="wwwroot\style\jquery\jquery.slim.min.map" />
     <Content Remove="wwwroot\style\bootstrap\css\business-frontpage.css" />
     <Content Remove="wwwroot\images\dirtyball.jpg" />
+    <Content Remove="wwwroot\images\pitcher.jpg" />
+    <Content Remove="wwwroot\images\hitter.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\style\.DS_Store" />
@@ -59,5 +62,7 @@
     <None Include="wwwroot\style\jquery\jquery.slim.min.map" />
     <None Include="wwwroot\style\bootstrap\css\business-frontpage.css" />
     <None Include="wwwroot\images\dirtyball.jpg" />
+    <None Include="wwwroot\images\pitcher.jpg" />
+    <None Include="wwwroot\images\hitter.jpg" />
   </ItemGroup>
 </Project>
