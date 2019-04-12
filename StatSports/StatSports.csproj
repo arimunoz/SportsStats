@@ -8,10 +8,20 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="HtmlAgilityPack" Version="1.9.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.15" />
+    <PackageReference Include="Dapper" Version="1.60.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\style\" />
+    <Folder Include="Pages\Home\" />
+    <Folder Include="Pages\MLB\" />
+    <Folder Include="Pages\MLB\Team\" />
+    <Folder Include="Pages\MLB\Players\" />
+    <Folder Include="Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\MLB_Repo\" />
+    <Folder Include="Pages\Settings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\style\.DS_Store" />
@@ -38,6 +48,8 @@
     <Content Remove="wwwroot\images\dirtyball.jpg" />
     <Content Remove="wwwroot\images\pitcher.jpg" />
     <Content Remove="wwwroot\images\hitter.jpg" />
+    <Content Remove="Pages\MLB\Players\Index.cshtml" />
+    <Content Remove="Pages\Settings\S_Database.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\style\.DS_Store" />
@@ -64,5 +76,9 @@
     <None Include="wwwroot\images\dirtyball.jpg" />
     <None Include="wwwroot\images\pitcher.jpg" />
     <None Include="wwwroot\images\hitter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\MLB\Players\Index.cshtml.cs" />
+    <Compile Remove="Pages\Settings\S_Database.cshtml.cs" />
   </ItemGroup>
 </Project>

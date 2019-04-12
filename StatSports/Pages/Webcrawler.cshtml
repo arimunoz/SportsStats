@@ -1,64 +1,94 @@
 ﻿@* WebCrawler Page *@
 @page
-@using System.Text
-@using HtmlAgilityPack
+
 
 
 
 @{
-    <!--  -->
-    Layout = "_Layout";
+
 
     <!--String Array that holds the URLs-->
     string[] MLB_Batting_URLs =
     {
 @"http://www.espn.com/mlb/stats/batting/_/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/41/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/81/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/121/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/161/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/201/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/241/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/281/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/321/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/361/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/401/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/441/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/481/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/521/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/561/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/601/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/641/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/681/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/721/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/761/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/801/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/841/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/881/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/921/qualified/false",
-@"http://www.espn.com/mlb/stats/batting/_/count/961/qualified/false"
+
+/*
+    @"http://www.espn.com/mlb/stats/batting/_/count/41/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/81/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/121/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/161/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/201/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/241/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/281/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/321/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/361/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/401/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/441/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/481/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/521/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/561/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/601/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/641/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/681/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/721/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/761/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/801/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/841/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/881/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/921/qualified/false",
+    @"http://www.espn.com/mlb/stats/batting/_/count/961/qualified/false"
+    */
 };
 
-    string outPut = null;
-    int i = 1;
-    int u = 0;
-    HtmlWeb web = new HtmlWeb();
-    var ESPNparse = ("//table[@class='tablehead']/tr[position() > 1]/td");
+            string outPut = null;
+            int i = 1;
+            int u = 0;
+            HtmlWeb web = new HtmlWeb();
+            var ESPNparse = ("//table[@class='tablehead']/tr[position() > 1]/td");
 
 
 }
 
-<div class="WC_sidebar">
-    <button class="collapsible">MLB</button>
-    <div class="content">
-        <a href="#batting">Batting</a>
-        <a href="#pitching">Pitching</a>
-        <a href="#fielding">Fielding</a>
+<!-- Sidebar  -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-bars"></i>            
+        </button>
+
     </div>
-</div>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-home"></i>
+                    MLB
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Teams</a>
+                    </li>
+                    <li>
+                        <a href="#">Leaders</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-briefcase"></i>
+                    About
+                </a>
+
+            </li>
+
+        </ul>
+
+</nav>
 
 
-<div class="main">
+<div id="content">
 
 
     <h1>Web Crawler</h1>
@@ -105,7 +135,7 @@
                 }
                 <td>@outPut</td>
 
-                @if (i == 19)
+                @if (i == 18)
                 {
                 @:</tr>
                 i = 0;
@@ -121,6 +151,24 @@
 
 
 
+
     </table>
 
 </div>
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+            });
+        });
+</script>
